@@ -23,6 +23,7 @@ export function Navigation() {
     { href: "/solutions", label: "Solutions" },
     { href: "/pricing", label: "Pricing" },
     { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -56,12 +57,11 @@ export function Navigation() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="font-medium">
-              Log in
-            </Button>
-            <Button className="font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button className="font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all" data-testid="button-get-quote-nav">
+                Get a Quote
+              </Button>
+            </Link>
           </div>
 
           <button
@@ -94,10 +94,11 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4">
-                <Button variant="outline" className="w-full justify-center">
-                  Log in
-                </Button>
-                <Button className="w-full justify-center">Get Started</Button>
+                <Link href="/contact" onClick={() => setIsMobileOpen(false)}>
+                  <Button className="w-full justify-center" data-testid="button-get-quote-mobile">
+                    Get a Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

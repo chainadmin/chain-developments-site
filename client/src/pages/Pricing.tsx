@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Pricing() {
   const fadeIn = {
@@ -122,7 +123,7 @@ export default function Pricing() {
                         </li>
                       ))}
                     </ul>
-                    <a href="mailto:contact@chain-developments.com">
+                    <Link href="/contact">
                       <Button 
                         className="w-full" 
                         variant={plan.highlighted ? "default" : "outline"}
@@ -130,7 +131,7 @@ export default function Pricing() {
                       >
                         {plan.cta} <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -170,11 +171,11 @@ export default function Pricing() {
           <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
             Contact us today for a free consultation and custom quote for your project.
           </p>
-          <a href="mailto:contact@chain-developments.com">
+          <Link href="/contact">
             <Button size="lg" className="px-8" data-testid="button-get-free-quote">
               Get a Free Quote <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
 

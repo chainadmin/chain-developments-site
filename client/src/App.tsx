@@ -9,6 +9,7 @@ import Features from "@/pages/Features";
 import Solutions from "@/pages/Solutions";
 import Pricing from "@/pages/Pricing";
 import About from "@/pages/About";
+import Contact from "@/pages/Contact";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/solutions" component={Solutions} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );
