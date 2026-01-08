@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chain Software Group — Link Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo-mark" aria-hidden="true">CS</div>
+          <span>Chain Software Group</span>
+        </div>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <div class="hero-content">
+        <p class="eyebrow">Chain Software Group</p>
+        <h1>All products, apps, and official links — in one place.</h1>
+        <p class="subhead">
+          Discover the core platforms, get support, and reach out to our team from one
+          streamlined hub.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://chainsoftwaregroup.com" target="_blank" rel="noopener">
+            Visit Chain Software
+          </a>
+          <button class="button ghost" type="button" data-scroll="#contact">Contact</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Official Links</h2>
+        <p>Trusted destinations for Chain Software Group products and support.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="links">
+        <div class="section-header">
+          <h2>Link Hub</h2>
+          <p>Quick access to our most-requested destinations.</p>
+        </div>
+        <div class="cards" id="link-cards"></div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="section-header">
+          <h2>Services</h2>
+          <p>Build, launch, and automate with our full-stack team.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Website Development</h3>
+            <p>Modern, conversion-ready websites that represent your brand clearly.</p>
+          </article>
+          <article class="service-card">
+            <h3>Hosting + Maintenance</h3>
+            <p>Secure hosting, uptime monitoring, and continuous improvements.</p>
+          </article>
+          <article class="service-card">
+            <h3>App Development</h3>
+            <p>Cross-platform apps that meet users where they are.</p>
+          </article>
+          <article class="service-card">
+            <h3>Business Automation</h3>
+            <p>Automated workflows that save time and create consistent results.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Tell us about your project and we will respond promptly.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let’s build together</h3>
+            <p>
+              Share your goals and we will connect you with the right solution for your
+              organization.
+            </p>
+            <ul>
+              <li>Support: <a href="mailto:support@chainsoftwaregroup.com">support@chainsoftwaregroup.com</a></li>
+              <li>Primary site: <a href="https://chainsoftwaregroup.com">chainsoftwaregroup.com</a></li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <label>
+              Name
+              <input name="name" type="text" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="you@email.com" required />
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" placeholder="(555) 123-4567" />
+            </label>
+            <label>
+              Topic
+              <select name="topic">
+                <option value="General inquiry">General inquiry</option>
+                <option value="Website Development">Website Development</option>
+                <option value="App Development">App Development</option>
+                <option value="Automation">Business Automation</option>
+                <option value="Support">Support</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+            </label>
+            <button class="button primary" type="submit">Send message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2024 Chain Software Group. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
