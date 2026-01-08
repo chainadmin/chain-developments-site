@@ -35,28 +35,18 @@ export function Navigation() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className="flex items-center gap-2 cursor-pointer">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5 text-primary-foreground"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-              </div>
+            <div className="flex items-center gap-3 cursor-pointer">
+              <img 
+                src="/logo.jpg" 
+                alt="Chain Software Group" 
+                className="w-10 h-10 rounded-lg object-cover"
+              />
               <span className="text-xl font-bold font-heading tracking-tight text-foreground">
-                Nexus<span className="text-primary">Core</span>
+                Chain <span className="text-primary">Software Group</span>
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
@@ -74,17 +64,16 @@ export function Navigation() {
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
+            data-testid="button-mobile-menu"
           >
             {isMobileOpen ? <X /> : <Menu />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
