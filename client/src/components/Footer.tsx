@@ -30,7 +30,7 @@ export function Footer() {
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" data-testid="link-github">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="mailto:contact@chain-developments.com" className="hover:text-white transition-colors" data-testid="link-email">
+              <a href="mailto:support@chainsoftwaregroup.com" className="hover:text-white transition-colors" data-testid="link-email">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -52,7 +52,7 @@ export function Footer() {
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/features" className="hover:text-primary transition-colors">Features</Link></li>
               <li><Link href="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
-              <li><a href="mailto:contact@chain-developments.com" className="hover:text-primary transition-colors">Contact</a></li>
+              <li><a href="mailto:support@chainsoftwaregroup.com" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
 

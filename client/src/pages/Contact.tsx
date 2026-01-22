@@ -213,8 +213,8 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <p className="font-medium text-sm">Email</p>
-                      <a href="mailto:contact@chain-developments.com" className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary">
-                        contact@chain-developments.com
+                      <a href="mailto:support@chainsoftwaregroup.com" className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary">
+                        support@chainsoftwaregroup.com
                       </a>
                     </div>
                   </div>
@@ -222,8 +222,8 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <p className="font-medium text-sm">Phone</p>
-                      <a href="tel:+15551234567" className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary">
-                        +1 (555) 123-4567
+                      <a href="tel:+17165343086" className="text-sm text-slate-600 dark:text-slate-400 hover:text-primary">
+                        (716) 534-3086
                       </a>
                     </div>
                   </div>
