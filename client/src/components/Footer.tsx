@@ -60,9 +60,9 @@ export function Footer() {
             <h4 className="text-white font-bold mb-6 font-heading">Products</h4>
             <ul className="space-y-3 text-sm text-slate-400">
               <li><a href="https://chainsoftwaregroup.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">ChainSoftwareGroup.com</a></li>
-              <li><Link href="/solutions" className="hover:text-primary transition-colors">Enterprise Solutions</Link></li>
-              <li><Link href="/solutions" className="hover:text-primary transition-colors">API Integrations</Link></li>
-              <li><Link href="/solutions" className="hover:text-primary transition-colors">Consulting Services</Link></li>
+              <li><a href="https://debtmanagerpro.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DebtManagerPro.com</a></li>
+              <li><a href="https://house-spades.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">House-Spades.com</a></li>
+              <li><Link href="/products" className="hover:text-primary transition-colors">View All Products</Link></li>
             </ul>
           </div>
         </div>
