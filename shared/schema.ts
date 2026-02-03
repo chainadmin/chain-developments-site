@@ -5,8 +5,13 @@ import { z } from "zod";
 // === TABLE DEFINITIONS ===
 export const contactMessages = pgTable("contact_messages", {
   id: serial("id").primaryKey(),
-  name: text("name").notNull(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
   email: text("email").notNull(),
+  phone: text("phone"),
+  company: text("company"),
+  projectType: text("project_type"),
+  budget: text("budget"),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });

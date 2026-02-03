@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -34,36 +35,38 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const subject = encodeURIComponent("Quote Request from Chain Software Group Website");
-    const body = encodeURIComponent(
-`New Quote Request
-
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone || "Not provided"}
-Company: ${formData.company || "Not provided"}
-Project Type: ${formData.projectType || "Not specified"}
-Budget: ${formData.budget || "Not specified"}
-
-Project Description:
-${formData.message}
-`
-    );
-    
-    // Open email client with pre-filled content
-    window.location.href = `mailto:support@chainsoftwaregroup.com?subject=${subject}&body=${body}`;
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await apiRequest("POST", "/api/contact", formData);
+      
       toast({
-        title: "Email Client Opened",
-        description: "Please send the email from your email application to complete your request.",
+        title: "Message Sent!",
+        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
       });
-    }, 500);
+      
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        company: "",
+        projectType: "",
+        budget: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const fadeIn = {
@@ -119,6 +122,8 @@ ${formData.message}
                           name="firstName"
                           placeholder="John" 
                           required 
+                          value={formData.firstName}
+                          onChange={handleInputChange}
                           data-testid="input-first-name"
                         />
                       </div>
@@ -129,6 +134,8 @@ ${formData.message}
                           name="lastName"
                           placeholder="Doe" 
                           required 
+                          value={formData.lastName}
+                          onChange={handleInputChange}
                           data-testid="input-last-name"
                         />
                       </div>
@@ -143,6 +150,8 @@ ${formData.message}
                           type="email" 
                           placeholder="john@company.com" 
                           required 
+                          value={formData.email}
+                          onChange={handleInputChange}
                           data-testid="input-email"
                         />
                       </div>
@@ -153,6 +162,8 @@ ${formData.message}
                           name="phone"
                           type="tel" 
                           placeholder="+1 (555) 123-4567" 
+                          value={formData.phone}
+                          onChange={handleInputChange}
                           data-testid="input-phone"
                         />
                       </div>
@@ -164,13 +175,15 @@ ${formData.message}
                         id="company" 
                         name="company"
                         placeholder="Your Company" 
+                        value={formData.company}
+                        onChange={handleInputChange}
                         data-testid="input-company"
                       />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="projectType">Project Type</Label>
-                      <Select name="projectType" required>
+                      <Select value={formData.projectType} onValueChange={(value) => handleSelectChange("projectType", value)}>
                         <SelectTrigger data-testid="select-project-type">
                           <SelectValue placeholder="Select a project type" />
                         </SelectTrigger>
@@ -188,7 +201,7 @@ ${formData.message}
 
                     <div className="space-y-2">
                       <Label htmlFor="budget">Estimated Budget</Label>
-                      <Select name="budget">
+                      <Select value={formData.budget} onValueChange={(value) => handleSelectChange("budget", value)}>
                         <SelectTrigger data-testid="select-budget">
                           <SelectValue placeholder="Select your budget range" />
                         </SelectTrigger>
@@ -211,6 +224,8 @@ ${formData.message}
                         placeholder="Tell us about your project, goals, and any specific requirements..."
                         className="min-h-[150px]"
                         required
+                        value={formData.message}
+                        onChange={handleInputChange}
                         data-testid="textarea-message"
                       />
                     </div>
