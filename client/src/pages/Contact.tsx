@@ -15,18 +15,44 @@ export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    // Web3Forms API - free email service for static sites
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY");
+    formData.append("subject", "New Quote Request from Chain Software Group Website");
+    formData.append("from_name", "Chain Software Group Website");
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.message || "Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const fadeIn = {
