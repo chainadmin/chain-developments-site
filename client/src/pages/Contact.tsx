@@ -14,45 +14,56 @@ import { useToast } from "@/hooks/use-toast";
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    projectType: "",
+    budget: "",
+    message: ""
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
+    const subject = encodeURIComponent("Quote Request from Chain Software Group Website");
+    const body = encodeURIComponent(
+`New Quote Request
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone || "Not provided"}
+Company: ${formData.company || "Not provided"}
+Project Type: ${formData.projectType || "Not specified"}
+Budget: ${formData.budget || "Not specified"}
+
+Project Description:
+${formData.message}
+`
+    );
     
-    // Web3Forms API - free email service for static sites
-    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY");
-    formData.append("subject", "New Quote Request from Chain Software Group Website");
-    formData.append("from_name", "Chain Software Group Website");
+    // Open email client with pre-filled content
+    window.location.href = `mailto:support@chainsoftwaregroup.com?subject=${subject}&body=${body}`;
     
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
-        });
-        form.reset();
-      } else {
-        throw new Error(result.message || "Failed to send message");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "There was a problem sending your message. Please try again or email us directly.",
-        variant: "destructive",
-      });
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      toast({
+        title: "Email Client Opened",
+        description: "Please send the email from your email application to complete your request.",
+      });
+    }, 500);
   };
 
   const fadeIn = {
