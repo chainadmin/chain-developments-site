@@ -48,8 +48,12 @@ export default function Home() {
                 Transform Your Ideas Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-600">Powerful Software</span>
               </motion.h1>
               
-              <motion.p variants={fadeIn} className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+              <motion.p variants={fadeIn} className="text-lg md:text-xl text-slate-600 mb-3 leading-relaxed">
                 Chain Software Group delivers custom software solutions that drive business growth. From web applications to enterprise systems, we build technology that works for you.
+              </motion.p>
+
+              <motion.p variants={fadeIn} className="text-base md:text-lg font-semibold text-primary mb-8">
+                Creating business solutions for the everyday entrepreneur.
               </motion.p>
               
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">

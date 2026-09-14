@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { 
-  ExternalLink, Mail, MessageSquare, Phone, Bot, 
-  Spade, CreditCard, BarChart3, Users, Zap, Shield
+import {
+  ExternalLink, Mail, MessageSquare, Phone, Bot,
+  Spade, CreditCard, BarChart3, Users, Zap, Shield,
+  WalletCards, Trophy, Sparkles, Film, Bell, Bookmark
 } from "lucide-react";
 
 export default function Products() {
@@ -18,8 +19,8 @@ export default function Products() {
   const products = [
     {
       name: "ChainSoftwareGroup.com",
-      tagline: "All-in-One SaaS Communication Platform",
-      description: "A comprehensive SaaS platform designed to streamline your business communications. Manage all your customer outreach from one centralized dashboard with powerful automation and AI capabilities.",
+      tagline: "Multi-Tenant Business & Communications Platform",
+      description: "A comprehensive, multi-tenant SaaS platform built to run the day-to-day of a service business — from consumer communications and billing to compliance. Agencies and businesses get their own branded dashboard, complete with automation and AI built in, so every customer touchpoint lives in one place.",
       url: "https://chainsoftwaregroup.com",
       icon: Zap,
       color: "bg-emerald-500",
@@ -27,97 +28,135 @@ export default function Products() {
         {
           icon: Mail,
           title: "Email Campaigns",
-          description: "Create and send targeted email campaigns with advanced analytics and A/B testing capabilities."
+          description: "Branded email campaigns and templates with tracking, built for agency-level sending at scale."
         },
         {
           icon: MessageSquare,
           title: "SMS/Text Campaigns",
-          description: "Reach customers instantly with SMS marketing campaigns, automated reminders, and notifications."
+          description: "Compliant SMS outreach with automated reminders, opt-out handling, and delivery tracking."
         },
         {
           icon: Phone,
-          title: "Phone System",
-          description: "Built-in VoIP phone system for calls, voicemail, and call tracking all integrated with your contacts."
+          title: "VoIP Phone System",
+          description: "Integrated VoIP calling and voicemail, tied directly to customer records and communication history."
         },
         {
           icon: Bot,
-          title: "AI Messaging",
-          description: "Intelligent AI-powered auto-responses that engage with customers 24/7, qualifying leads and answering questions."
+          title: "AI Auto-Response",
+          description: "AI-powered replies that engage customers around the clock, qualifying leads and answering common questions."
         }
       ],
-      badges: ["SaaS", "Marketing", "Automation", "AI-Powered"]
+      badges: ["SaaS", "Multi-Tenant", "Automation", "AI-Powered"]
     },
     {
       name: "DebtManagerPro.com",
-      tagline: "Professional Collection Management Software",
-      description: "Powerful collection software designed to help businesses manage accounts receivable efficiently. Track, organize, and recover outstanding debts with our comprehensive management system.",
+      tagline: "The Calm Center of Your Collection Operation",
+      description: "Purpose-built collection software for agencies that need a clear line from portfolio to payment. Debt Manager Pro brings account detail, collector productivity tools, and compliance controls together in one connected system, without losing the accountability that matters.",
       url: "https://debtmanagerpro.com",
       icon: CreditCard,
       color: "bg-blue-500",
       features: [
         {
-          icon: BarChart3,
-          title: "Account Management",
-          description: "Centralized dashboard to track all accounts, payment history, and outstanding balances in real-time."
+          icon: WalletCards,
+          title: "Payments That Reconcile",
+          description: "Run cards, ACH, and checks directly from the account record, with a clean audit trail every time."
         },
         {
           icon: Users,
-          title: "Debtor Profiles",
-          description: "Comprehensive debtor profiles with contact information, payment plans, and communication history."
+          title: "Collector Workstation",
+          description: "Purpose-built tools for account work, permissions, productivity, and wage tracking."
         },
         {
-          icon: MessageSquare,
-          title: "Automated Follow-ups",
-          description: "Set up automated reminders and follow-up sequences to improve collection rates."
+          icon: BarChart3,
+          title: "Portfolio Intelligence",
+          description: "Placement, liquidation, and recovery data organized so leaders can make faster decisions."
         },
         {
           icon: Shield,
-          title: "Compliance Ready",
-          description: "Built with compliance in mind, helping you stay within regulatory guidelines."
+          title: "Compliance Built In",
+          description: "FDCPA, GLBA, and TCPA-minded controls embedded directly into daily collector workflows."
         }
       ],
-      badges: ["Finance", "Collections", "B2B", "Automation"]
+      badges: ["Finance", "Collections", "B2B", "Compliance"]
     },
     {
       name: "House-Spades.com",
-      tagline: "Classic Card Game Experience",
-      description: "Enjoy the timeless card game of Spades online. Challenge friends or play against opponents in this classic trick-taking card game that's been entertaining players for generations.",
+      tagline: "Classic & Custom Spades, Online",
+      description: "A polished online take on the timeless trick-taking card game. Play the classic Ace High game or the custom Joker Joker Deuce Deuce variant, solo against bots or in live matchmaking, with skill-based ranking that keeps every hand competitive.",
       url: "https://house-spades.com",
       icon: Spade,
       color: "bg-purple-500",
       features: [
         {
           icon: Users,
-          title: "Multiplayer",
-          description: "Play with friends or match with players from around the world in real-time games."
+          title: "Live Multiplayer",
+          description: "Play with friends or get matched with players worldwide, with bots filling any empty seats."
         },
         {
-          icon: BarChart3,
-          title: "Leaderboards",
-          description: "Compete for top rankings and track your progress on global leaderboards."
+          icon: Trophy,
+          title: "ELO Ranking",
+          description: "Skill-based matchmaking and rating tiers keep matches fair and genuinely competitive."
         },
         {
           icon: Zap,
-          title: "Quick Matches",
-          description: "Jump into games quickly with our fast matchmaking system."
+          title: "Two Game Modes",
+          description: "Play classic Ace High Spades or the custom Joker Joker Deuce Deuce variant with its own trump order."
         },
         {
           icon: Shield,
           title: "Fair Play",
-          description: "Anti-cheat systems ensure a fair and enjoyable gaming experience for everyone."
+          description: "Anti-cheat systems and consistent scoring rules keep every game honest."
         }
       ],
-      badges: ["Gaming", "Cards", "Multiplayer", "Entertainment"]
+      badges: ["Gaming", "Cards", "Multiplayer", "iOS & Android"]
+    },
+    {
+      name: "Buzzreel",
+      tagline: "Discover What's Trending Before Everyone Else",
+      description: "A mobile-first entertainment discovery app that helps people find trending movies, TV shows, and podcasts, track upcoming releases, and manage personal watchlists — all in one clean, fast experience for iOS, Android, and the web.",
+      url: "https://buzzreel.app",
+      icon: Film,
+      color: "bg-orange-500",
+      features: [
+        {
+          icon: Sparkles,
+          title: "Trending Discovery",
+          description: "Browse what's trending in movies, TV, and podcasts, updated to reflect what people are watching right now."
+        },
+        {
+          icon: Bell,
+          title: "Upcoming Releases",
+          description: "Track release dates for titles you care about and get notified as soon as they drop."
+        },
+        {
+          icon: Bookmark,
+          title: "Personal Watchlists",
+          description: "Save titles across movies, shows, and podcasts to a watchlist that follows you across devices."
+        },
+        {
+          icon: BarChart3,
+          title: "Buzz Meter",
+          description: "See what's buzzing by region so you always know what to watch next."
+        }
+      ],
+      badges: ["Entertainment", "Mobile App", "iOS & Android", "Streaming Guide"]
     }
   ];
+
+  const slugify = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Navigation />
 
-      <section className="pt-32 pb-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <motion.div 
+      <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-background">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-emerald-100/50 dark:bg-emerald-500/10 blur-3xl opacity-60" />
+          <div className="absolute top-[50%] -left-[10%] w-[45%] h-[45%] rounded-full bg-teal-50/60 dark:bg-teal-500/10 blur-3xl opacity-50" />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+          <motion.div
             className="text-center max-w-3xl mx-auto"
             initial="hidden"
             animate="visible"
@@ -129,9 +168,54 @@ export default function Products() {
             <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
               Software Solutions Built for Success
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
               Explore our suite of products designed to help businesses communicate better, manage finances, and engage users.
             </p>
+            <p className="text-base font-semibold text-primary">
+              Creating business solutions for the everyday entrepreneur.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            {[
+              { label: "Products Live", value: `${products.length}` },
+              { label: "Industries Served", value: "4+" },
+              { label: "Platforms", value: "Web & Mobile" },
+              { label: "Support", value: "Always On" },
+            ].map((stat, i) => (
+              <div
+                key={i}
+                className="rounded-xl bg-white/70 dark:bg-white/5 border border-slate-100 dark:border-white/10 backdrop-blur-sm px-4 py-5 text-center"
+                data-testid={`products-stat-${i}`}
+              >
+                <div className="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white">{stat.value}</div>
+                <div className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="mt-10 flex flex-wrap justify-center gap-3"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            {products.map((product, i) => (
+              <a
+                key={i}
+                href={`#${slugify(product.name)}`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary/40 hover:text-primary transition-colors"
+                data-testid={`link-jump-${i}`}
+              >
+                <span className={`h-2 w-2 rounded-full ${product.color}`} />
+                {product.name}
+              </a>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -142,11 +226,12 @@ export default function Products() {
             {products.map((product, i) => (
               <motion.div
                 key={i}
+                id={slugify(product.name)}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
+                className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center scroll-mt-24`}
               >
                 <div className="flex-1 space-y-6">
                   <div className="flex items-center gap-4">
