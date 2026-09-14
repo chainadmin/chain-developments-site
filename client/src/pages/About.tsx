@@ -51,9 +51,15 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
               About Chain Software Group
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
               We are a team of passionate developers, designers, and strategists dedicated to building exceptional software solutions.
             </p>
+            <div className="inline-block rounded-2xl bg-white border border-slate-100 shadow-sm px-6 py-5 md:px-10 md:py-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Our Mission</p>
+              <p className="text-xl md:text-2xl font-bold text-slate-900" data-testid="text-mission-statement">
+                Creating business solutions for the everyday entrepreneur.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -18,7 +18,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Building powerful software solutions that drive business growth. From custom development to enterprise platforms, we deliver excellence.
+              Creating business solutions for the everyday entrepreneur — from custom development to our own suite of software products, we deliver excellence.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" data-testid="link-twitter">
@@ -62,6 +62,7 @@ export function Footer() {
               <li><a href="https://chainsoftwaregroup.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">ChainSoftwareGroup.com</a></li>
               <li><a href="https://debtmanagerpro.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">DebtManagerPro.com</a></li>
               <li><a href="https://house-spades.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">House-Spades.com</a></li>
+              <li><a href="https://buzzreel.app" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Buzzreel</a></li>
               <li><Link href="/products" className="hover:text-primary transition-colors">View All Products</Link></li>
             </ul>
           </div>
@@ -70,6 +71,8 @@ export function Footer() {
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p data-testid="text-copyright">&copy; {new Date().getFullYear()} Chain Software Group. All rights reserved.</p>
           <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-primary transition-colors" data-testid="link-privacy">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors" data-testid="link-terms">Terms of Service</Link>
             <span className="text-slate-600">chain-developments.com</span>
           </div>
         </div>
